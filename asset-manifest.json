@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SnapTalk.io/static/css/main.9ffb747e.css",
+    "main.js": "/SnapTalk.io/static/js/main.defb9776.js",
+    "static/media/arrow.svg": "/SnapTalk.io/static/media/arrow.de7be549707ff776dbc6.svg",
+    "index.html": "/SnapTalk.io/index.html",
+    "static/media/send_ico.svg": "/SnapTalk.io/static/media/send_ico.06de0e0291fc4771b597.svg",
+    "main.9ffb747e.css.map": "/SnapTalk.io/static/css/main.9ffb747e.css.map",
+    "main.defb9776.js.map": "/SnapTalk.io/static/js/main.defb9776.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ffb747e.css",
+    "static/js/main.defb9776.js"
+  ]
+}
