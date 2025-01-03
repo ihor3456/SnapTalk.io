@@ -1,0 +1,212 @@
+@import "/src/assets/styles/variables";
+
+.right-side {
+  display: grid;
+  grid-template: auto 1fr 100px / 100%;
+
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1 / 4;
+    span {
+      padding: 5px 10px;
+      border-radius: 17px;
+      color: #ffffff;
+      font-size: 1.5em;
+      background: $color-gray-300;
+    }
+  }
+
+  .top {
+    padding: 20px;
+    background: $color-gray-100;
+    border-bottom: 2px solid $color-gray-200;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .arrow-back {
+      display: none;
+      width: 30px;
+      height: 25px;
+      img {
+        transform: scaleX(1.3);
+      }
+    }
+    .img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .name {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+
+  .main {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    .message {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .text {
+        width: fit-content;
+        max-width: 80%;
+        min-height: 50px;
+        border-radius: 25px;
+        padding: 15px;
+        line-height: 20px;
+      }
+      .time {
+        padding: 0 15px 20px;
+        font-size: 0.8em;
+        font-style: italic;
+        color: $color-gray-300;
+      }
+      &.input {
+        align-items: flex-start;
+        .text {
+          background: $color-blue;
+          color: #ffffff;
+        }
+      }
+      &.output {
+        align-items: flex-end;
+        .text {
+          background: #e0e0e0;
+          color: $color-gray-400;
+        }
+      }
+
+      &__loader {
+        height: 50px;
+        display: flex;
+        column-gap: 15px;
+        padding-left: 10px;
+        .dot {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: $color-gray-200;
+          animation: dot-loading 1s alternate 0s infinite;
+          &:nth-child(2) {
+            animation-delay: 0.25s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.5s;
+          }
+
+          @keyframes dot-loading {
+            0% {
+              background: #ffffff;
+            }
+            100% {
+              background: $color-gray-300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding: 25px 20px;
+    background: $color-gray-100;
+    border-top: 2px solid $color-gray-200;
+    position: relative;
+
+    input {
+      width: 100%;
+      height: 50px;
+      padding: 0 50px 0 20px;
+      border-radius: 25px;
+      &:focus {
+        outline: 1px solid $color-cyan;
+      }
+      &::placeholder {
+        color: #c7c0c0;
+      }
+    }
+    img {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .ico-btn img {
+    filter: invert(65%) sepia(0%) saturate(7%) hue-rotate(185deg) brightness(91%) contrast(89%);
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      filter: invert(74%) sepia(6%) saturate(4726%) hue-rotate(170deg) brightness(93%) contrast(90%);
+    }
+    &:active {
+      scale: 0.8;
+    }
+  }
+
+  .toast {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 25px 1fr;
+    align-items: center;
+    overflow: hidden;
+
+    &__avatar {
+      height: 25px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &__name {
+      font-weight: bold;
+      color: $color-gray-400;
+    }
+    &__text {
+      grid-column: 1 / 3;
+      color: $color-gray-300;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  .Toastify__progress-bar--info {
+    background: $color-green;
+  }
+  .Toastify__toast-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right-side {
+    transition: 0.5s;
+    &.slide-left {
+      transform: translateX(-100%);
+    }
+
+    .top .arrow-back {
+      display: block;
+    }
+  }
+}
